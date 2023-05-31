@@ -2,8 +2,8 @@
 {
     internal class Settings
     {
-        public const string SettingsPath = @"MetaData/$internal-settings";
-        public const string VersionPath = @"MetaData/$app-version";
+        public const string SettingsPath = @"MetaData/internal-settings.txt";
+        public const string VersionPath = @"MetaData/app-version.txt";
 
         public static Dictionary<string, ConsoleKey> ControlsSettings = new()
             {

@@ -4,7 +4,7 @@ if not exist "MetaData" (
     mkdir MetaData
 )
 
-if not exist "MetaData/$internal-settings" (
+if not exist "MetaData/internal-settings.txt" (
     echo Creating $internal-settings
     (
     echo True
@@ -21,12 +21,12 @@ if not exist "MetaData/$internal-settings" (
     echo ConsoleKey.S
     echo ConsoleKey.C
     echo ConsoleKey.Escape
-    ) >> "MetaData/$internal-settings"
+    ) >> "MetaData/internal-settings.txt"
 )
 
-if not exist "MetaData/$app-version" (
+if not exist "MetaData/app-version" (
     echo Creating $app-version
-    echo 0.14-053023 >> "MetaData\$app-version"
+    echo 0.14-053023 >> "MetaData\$app-version.txt"
 )
 
 if not exist "MetaData/tips.txt" (
@@ -55,7 +55,7 @@ if not exist "MetaData/tips.txt" (
     ) >> "MetaData/tips.txt"
 )
 
-if not exist "MetaData/$patch-notes" (
+if not exist "MetaData/patch-notes" (
     REM cd MetaData
     REM curl -o $patch-notes https://raw.githubusercontent.com/OnlyHouska/pacman-project/main/$patch-notes?token=GHSAT0AAAAAACDHORPLDCVEFESSWNRD6L5OZDUWPEQ
 )

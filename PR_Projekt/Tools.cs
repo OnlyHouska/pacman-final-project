@@ -10,8 +10,8 @@ namespace PR_Projekt
 
         public const string BitmapPath = @"MetaData/bitmap.png";
         public const string AudioPath = @"MetaData/Audio";
-        public const string PatchNotesPath = @"MetaData/$patch-notes";
-        public const string IssuesPath = @"MetaData/$issues";
+        public const string PatchNotesPath = @"MetaData/patch-notes.txt";
+        public const string IssuesPath = @"MetaData/issues.txt";
         public const string TipsPath = @"MetaData/tips.txt";
 
         /// <summary>
