@@ -1,0 +1,5 @@
+- SFX causing memory leak {E-05}
+- SFX causing the game to crash sometimes {E-06-2, 3}
+- Sometimes player dies randomly {E-14}
+- Pacman spawning on random positions {E-15}
+- 2nd score bar appearing at the top left (couldn't recreate) {E-16}

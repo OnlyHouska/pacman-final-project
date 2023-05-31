@@ -1,0 +1,4 @@
+- Fixed one error of SFX crashing the game (2 more to go) {E-07-1}
+- Fixed not reseting fruits count after a game reset {E-11}
+- Ghost can no longer eat fruit {E-12}
+- Fixed program not repairing missing files {E-13}
