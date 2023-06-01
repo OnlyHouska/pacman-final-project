@@ -43,8 +43,8 @@ namespace PR_Projekt
             Console.ReadKey();
         }
 
-        public const string fixFilePath = "FixFiles.bat";
-        private static void MetaDataCheck()
+        public const string fixFilePath = "ReinstallFiles.py";
+        private static async void MetaDataCheck()
         {
             bool missingFiles = false;
             if (!File.Exists(Settings.SettingsPath))
@@ -86,7 +86,7 @@ namespace PR_Projekt
 
             if (missingFiles)
             {
-                Console.WriteLine($"\n\nYou can fix the error by running the file {fixFilePath}");
+                Console.WriteLine($"\n\nYou can fix the error by running the file {fixFilePath}. This will reinstall also the still existing files!");
                 Color.DarkYellow();
                 Console.WriteLine("<ENTER> to fix automatically");
                 Console.Write("<ESC> to exit");
@@ -98,9 +98,10 @@ namespace PR_Projekt
                     switch (key)
                     {
                         case ConsoleKey.Enter:
+                            Process.Start(fixFilePath);
+                            Console.SetCursorPosition(0, 0);
                             Tools.LoadingScreenAnimation();
                             Console.SetCursorPosition(0, 0);
-                            Process.Start(fixFilePath);
                             inMenu = false;
                             break;
                         case ConsoleKey.Escape:
