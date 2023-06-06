@@ -1,4 +1,5 @@
 ﻿using BasicFunctionsLibrary;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -44,6 +45,7 @@ namespace PR_Projekt
         }
 
         public const string fixFilePath = "ReinstallFiles.py";
+        public const string reinstallFilesCommand = "python " + fixFilePath;
         private static async void MetaDataCheck()
         {
             bool missingFiles = false;
@@ -86,7 +88,7 @@ namespace PR_Projekt
 
             if (missingFiles)
             {
-                Console.WriteLine($"\n\nYou can fix the error by running the file {fixFilePath}. This will reinstall also the still existing files!");
+                Console.WriteLine($"\n\nYou can fix the error by running the file {fixFilePath}.");
                 Color.DarkYellow();
                 Console.WriteLine("<ENTER> to fix automatically");
                 Console.Write("<ESC> to exit");
@@ -98,7 +100,7 @@ namespace PR_Projekt
                     switch (key)
                     {
                         case ConsoleKey.Enter:
-                            Process.Start(fixFilePath);
+                            Repair();
                             Console.SetCursorPosition(0, 0);
                             Tools.LoadingScreenAnimation();
                             Console.SetCursorPosition(0, 0);
@@ -110,6 +112,31 @@ namespace PR_Projekt
                     }
                 }
                 Environment.Exit(0);
+            }
+        }
+
+        private static void Repair()
+        {
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = reinstallFilesCommand;
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+
+            try
+            {
+                using (Process process = Process.Start(start))
+                {
+                    using (StreamReader reader = process.StandardOutput)
+                    {
+                        string result = reader.ReadToEnd();
+                        Console.Write(result);
+                    }
+                }
+            }
+            catch (Win32Exception e)
+            {
+                Tools.ThrowException(e);
             }
         }
 

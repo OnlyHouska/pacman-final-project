@@ -2,3 +2,4 @@
 - Fixed not reseting fruits count after a game reset {E-11}
 - Ghost can no longer eat fruit {E-12}
 - Fixed program not repairing missing files {E-13}
+- Reworked ReinstallFiles.py to not reinstall everything but just the missing files {E-14-1}

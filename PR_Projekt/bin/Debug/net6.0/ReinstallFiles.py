@@ -8,13 +8,15 @@ urls = [
     "https://raw.githubusercontent.com/OnlyHouska/pacman-final-project/main/PR_Projekt/bin/Debug/net6.0/MetaData/issues.txt",
     "https://raw.githubusercontent.com/OnlyHouska/pacman-final-project/main/PR_Projekt/bin/Debug/net6.0/MetaData/patch-notes.txt",
     "https://raw.githubusercontent.com/OnlyHouska/pacman-final-project/main/PR_Projekt/bin/Debug/net6.0/MetaData/tips.txt"
+    #"https://download-directory.github.io?url=https://github.com/OnlyHouska/pacman-final-project/tree/main/PR_Projekt/bin/Debug/net6.0/MetaData/Audio"
 ]
 names = [
-    "MetaData/app-version.txt",
-    "MetaData/internal-settings.txt",
-    "MetaData/issues.txt",
-    "MetaData/patch-notes.txt",
-    "MetaData/tips.txt"
+    "app-version.txt",
+    "internal-settings.txt",
+    "issues.txt",
+    "patch-notes.txt",
+    "tips.txt"
+    #"MetaData/Audio"
 ]
 
 for url, name in zip(urls, names):
@@ -23,7 +25,7 @@ for url, name in zip(urls, names):
         response = requests.get(url)
         response.raise_for_status()
 
-        with open(name, "wb") as file:
+        with open(pathToFile, "wb") as file:
             file.write(response.content)
 
-    print(f"File {name} downloaded successfully.")
+        print(f"File {name} downloaded successfully.")
