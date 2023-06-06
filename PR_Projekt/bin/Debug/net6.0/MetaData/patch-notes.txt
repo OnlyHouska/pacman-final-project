@@ -3,3 +3,4 @@
 - Ghost can no longer eat fruit {E-12}
 - Fixed program not repairing missing files {E-13}
 - Reworked ReinstallFiles.py to not reinstall everything but just the missing files {E-14-1}
+- Fixed p acman spawning on random positions {E-16}

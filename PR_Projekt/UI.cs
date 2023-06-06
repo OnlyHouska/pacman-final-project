@@ -22,7 +22,7 @@ namespace PR_Projekt
             switch (loc)
             {
                 case Location.Start:
-                    Start(p);
+                    Game.Restart(p);
                     break;
                 case Location.Settings:
                     Console.Title = "PacMan 2023 - Settings";
